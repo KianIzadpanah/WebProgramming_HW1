@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dynamic Calculator</h1>
+      <h2>
+        Fee Calculator
+        <i
+          class="fas fa-circle-info info"
+          title="Formula: Price Unit * Count - Discount"
+        ></i>
+      </h2>
+
+      <input type="text" id="fee" placeholder="Price Unit" />
+      <input type="text" id="count" placeholder="Count" />
+      <input type="text" id="discount" placeholder="Discount" />
+      <formula evaluator="count*fee-discount"></formula>
+
+      <hr />
+
+      <h2>
+        BMI Calculator
+        <i
+          class="fas fa-circle-info info"
+          title="Formula: Weight / (Height * Height)"
+        ></i>
+      </h2>
+      <input type="text" id="weight" placeholder="Weight (kg)" />
+      <input type="text" id="height" placeholder="Height (m)" />
+      <formula evaluator="weight / (height * height)"></formula>
+
+      <hr />
+
+      <h2>
+        GPA Calculator
+        <i
+          class="fas fa-circle-info info"
+          title="Formula: Σ(Grade × Credit) / Σ(Credit)"
+        ></i>
+      </h2>
+      <div id="gpa-container">
+        <button type="button" class="add-course">+</button>
+        <div class="gpa-row">
+          <input type="text" class="grade" placeholder="Grade (/20)" />
+          <input type="text" class="credit" placeholder="Credit" />
+          <button type="button" class="remove-course">-</button>
+        </div>
+        <formula evaluator="calculateGPA"></formula>
+      </div>
+    </div>
+
+    <script src="formula.js"></script>
+  </body>
+</html>
